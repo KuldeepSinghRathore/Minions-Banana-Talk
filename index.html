@@ -4,31 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banananana Talks</title>
-    <style>
-      #txt-input,
-      #output {
-        width: 50%;
-        height: 5rem;
-      }
-      #btn-translate {
-        display: block;
-      }
-      #output {
-        border: 3px solid grey;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Talk in Banananana Wayyyssssss</h1>
-    <textarea
-      name=""
-      id="txt-input"
-      placeholder="Please Put in your message to translate"
-    ></textarea>
-    <button id="btn-translate">Click Me</button>
+    <header>
+      <nav>
+        <span>Banananana Talks</span>
+      </nav>
+    </header>
+    <div class="inputoutput">
+      <textarea
+        name=""
+        id="txt-input"
+        placeholder="Please Put in your message to translate"
+      ></textarea>
+      <button id="btn-translate">Click to Translate</button>
 
-    <h2>Output Comes Here 👇👇</h2>
-    <div id="output"></div>
+      <h2>Output Comes Here 👇👇</h2>
+      <div id="output"></div>
+    </div>
+    <footer>
+      Made by <a href="https://kuldeepsingh.netlify.app/">Kuldeep Singh</a> With
+      ❤️
+    </footer>
     <script src="app.js" type="text/javascript"></script>
   </body>
 </html>
