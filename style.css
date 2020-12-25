@@ -19,6 +19,7 @@ nav span {
   border: 1px solid #065f46;
   background: #a7f3d0;
   border-radius: 0.4rem;
+  text-transform: capitalize;
 }
 #txt-input,
 #output {
