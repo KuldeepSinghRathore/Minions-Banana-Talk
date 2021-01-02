@@ -1,3 +1,7 @@
+:root {
+  --main-color: #e7ba48;
+  --primary-color: #eec459;
+}
 * {
   margin: 0;
   padding: 0;
@@ -26,15 +30,15 @@ textarea {
 }
 nav {
   padding: 2rem;
-  background-color: #e7ba48;
+  background-color: var(--main-color);
 }
 nav span {
   padding: 1rem;
   text-transform: uppercase;
   margin: auto;
   color: black;
-  border: 1px solid #e7ba48;
-  background: #eec459;
+  border: 1px solid var(--main-color);
+  background: var(--primary-color);
   border-radius: 0.4rem;
   text-transform: capitalize;
   font-family: "Hanalei Fill", cursive;
@@ -50,7 +54,7 @@ nav span {
 #btn-translate {
   display: block;
   margin: auto;
-  background-color: #eec459;
+  background-color: var(--primary-color);
   border: 1px solid hsl(0, 0%, 70%);
   outline: none;
   cursor: pointer;
@@ -61,7 +65,7 @@ nav span {
 
 #btn-translate:hover,
 #btn-translate:focus {
-  background-color: #e7ba48;
+  background-color: var(--main-color);
   box-shadow: 0 0 5px 0 #e0c274;
   color: #fafafa;
 }
@@ -77,7 +81,7 @@ nav span {
 #txt-input,
 h2 {
   margin: 1rem 0;
-  color: thistle;
+  color: rgb(233, 206, 206);
 }
 textarea#txt-input {
   text-align: center;
@@ -115,7 +119,7 @@ button#btn-speak {
 }
 footer {
   padding: 2rem;
-  background-color: #e7ba48;
+  background-color: var(--main-color);
   position: fixed;
   bottom: 0;
   width: 100%;
