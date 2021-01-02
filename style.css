@@ -3,34 +3,54 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url(./img/toy-3245426_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
 a {
   text-decoration: none;
-  color: #a7f3d0;
+  color: #fafafa;
+}
+a,
+h1,
+h2,
+h3,
+h4,
+textarea {
+  font-family: "Montserrat", sans-serif;
 }
 nav {
   padding: 2rem;
-  background-color: #34d399;
+  background-color: #e7ba48;
 }
 nav span {
   padding: 1rem;
   text-transform: uppercase;
   margin: auto;
-  color: #065f46;
-  border: 1px solid #065f46;
-  background: #a7f3d0;
+  color: black;
+  border: 1px solid #e7ba48;
+  background: #eec459;
   border-radius: 0.4rem;
   text-transform: capitalize;
+  font-family: "Hanalei Fill", cursive;
+  font-size: 1.5rem;
 }
 #txt-input,
-#output {
+#output-div {
   width: 50%;
   height: 5rem;
+  outline: none;
 }
 
-#btn {
+#btn-translate {
   display: block;
   margin: auto;
-  background-color: hsl(0, 0%, 90%);
+  background-color: #eec459;
   border: 1px solid hsl(0, 0%, 70%);
   outline: none;
   cursor: pointer;
@@ -39,32 +59,46 @@ nav span {
   font-weight: 600;
 }
 
-#btn:hover,
-#btn:focus {
-  background-color: #28b573;
-  box-shadow: 0 0 5px 0 #399d6e;
+#btn-translate:hover,
+#btn-translate:focus {
+  background-color: #e7ba48;
+  box-shadow: 0 0 5px 0 #e0c274;
   color: #fafafa;
 }
 
-#output {
+#output-div {
   border: 3px solid grey;
-  margin: auto;
+  margin: 1rem auto;
   border-radius: 0.4rem;
+  font-size: 1.2rem;
+  color: azure;
+  padding: 1rem;
 }
 #txt-input,
 h2 {
   margin: 1rem 0;
+  color: thistle;
 }
 textarea#txt-input {
   text-align: center;
   padding: 1rem;
   /* font-size: 2rem; */
   border-radius: 0.4rem;
+  background: none;
+  font-size: 1.2rem;
+  color: azure;
 }
 #txt-input::placeholder {
   text-align: center;
+  font-size: 1rem;
+  padding: 0.1rem;
+  color: whitesmoke;
+}
+#output-div::placeholder {
+  text-align: center;
 
   padding: 0.1rem;
+  color: whitesmoke;
 }
 #txt-input {
   resize: none;
@@ -74,9 +108,14 @@ textarea#txt-input {
   text-align: center;
   margin-top: 0.5rem;
 }
+button#btn-speak {
+  color: darkorange;
+  font-size: 2rem;
+  cursor: pointer;
+}
 footer {
   padding: 2rem;
-  background-color: #34d399;
+  background-color: #e7ba48;
   position: fixed;
   bottom: 0;
   width: 100%;

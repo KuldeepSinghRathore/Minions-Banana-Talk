@@ -1,32 +1,68 @@
-var btnTranslate = document.querySelector("#btn");
-var txtinput = document.querySelector("#txt-input");
-// console.log(txtinput);
-var outputDiv = document.querySelector("#output");
+const btn = document.querySelector("#btn-translate");
+// btn.innerText = "checking1";
+const inputDiv = document.querySelector("#txt-input");
+// inputDiv.innerText = "cj2";
 
-// var mockApiUrl= "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
-var mockApiUrl = "https://api.funtranslations.com/translate/minion.json";
+const outputDiv = document.querySelector("#output-div");
+const btnSpeak = document.querySelector("#btn-speak");
+// outputDiv.innerText = "ddd";
 
-function getTranslationURL(text) {
-  return mockApiUrl + "?" + "text=" + text;
+// btn.addEventListener("click", () => {
+//   // outputDiv.innerText = "falanadimaka" + inputDiv.value;
+//   // console.log(outputDiv.innerText);
+
+// });
+
+let serverApi =
+  "https://minionsapi.kuldeeprathore.repl.co/translate/minion.json";
+function getTranslate(whatever) {
+  return serverApi + "?" + "text= " + whatever;
 }
-function errorHandler(error) {
-  console.log("error occured", error);
-  alert("There is issue with server please try after Sometimes");
-}
+// function clickHandler() {
+//   let inputText = inputDiv.value;
+//   // console.log(inputText);
 
-function clickEventHandler() {
-  var inputText = txtinput.value;
+//   fetch(getTranslate(inputText))
+//     .then((response) => response.json())
+//     .then((json) => {
+//       let translatedText = json.contents.translated;
+//       outputDiv.innerText = translatedText;
+//     });
+// }
+// btn.addEventListener("click",clickHandler)
+btn.addEventListener("click", () => {
+  let inputText = inputDiv.value;
+  // console.log(inputText);
 
-  //calling fetch
-  fetch(getTranslationURL(inputText))
-    .then(function responseHandler(response) {
-      return response.json();
-    })
-    .then(function logJSON(json) {
-      translatedText = json.contents.translated;
+  fetch(getTranslate(inputText))
+    .then((response) => response.json())
+    .then((json) => {
+      let translatedText = json.contents.translated;
       outputDiv.innerText = translatedText;
-    })
-    .catch(errorHandler);
-}
+    });
 
-btn.addEventListener("click", clickEventHandler);
+  btnSpeak.addEventListener("click", () => {
+    if ("speechSynthesis" in window) {
+      var synthesis = window.speechSynthesis;
+
+      // Get the first `en` language voice in the list
+      var voice = synthesis.getVoices().filter(function (voice) {
+        return voice.lang === "en";
+      })[0];
+
+      // Create an utterance object
+      var utterance = new SpeechSynthesisUtterance(outputDiv.innerText);
+
+      // Set utterance properties
+      utterance.voice = voice;
+      utterance.pitch = 1.5;
+      utterance.rate = 1.25;
+      utterance.volume = 0.8;
+
+      // Speak the utterance
+      synthesis.speak(utterance);
+    } else {
+      console.log("Text-to-speech not supported.");
+    }
+  });
+});
